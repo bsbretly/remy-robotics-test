@@ -1,0 +1,12 @@
+<launch>
+
+  <?ignore
+      =========================================================
+                          pick_and_place
+      =========================================================
+  ?>
+    <node name="pick_and_place" pkg="pick_and_place" type="pick_and_place" output="screen">
+      <rosparam command="load" file="$(find pick_and_place)/cfg/pick_and_place_params.yaml" />
+    </node>
+  
+</launch>

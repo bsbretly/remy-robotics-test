@@ -1,0 +1,9 @@
+robot_pose_service: /gazebo/get_model_state
+gripper_command_topic: /gripper_joint_position/command
+robot_name: robot
+block_name: block
+number_blocks: 5 # number of blocks to pick and place
+planning_time: 10.0 # time limit for trajactory planning
+column_length: 0.7 # length of the column upon the manipulator is placed on top of
+pre_grip_z: 0.25 # z-distance above block prior to gripping block
+grip_z: 0.05 # z-distance relative to pre_grip_z required to move "down" in z to grip the block

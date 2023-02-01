@@ -1,0 +1,16 @@
+[submodule "catkin_ws/src/rg2_gripper"]
+    path = "catkin_ws/src/rg2_gripper"
+	url = https://github.com/ekorudiawan/rg2_simulation.git
+[submodule "catkin_ws/src/gazebo_grasp_plugin"]
+    path = "catkin_ws/src/gazebo_grasp_plugin"
+	url = https://github.com/JenniferBuehler/gazebo-pkgs.git
+[submodule "catkin_ws/src/gazebo_general_msgs"]
+    path = "catkin_ws/src/gazebo_general_msgs"
+    url = https://github.com/JenniferBuehler/general-message-pkgs.git
+[submodule "catkin_ws/src/gazebo_mimic_joint_plugin"]
+    path = "catkin_ws/src/gazebo_mimic_joint_plugin"
+    url = https://github.com/roboticsgroup/roboticsgroup_gazebo_plugins.git
+[submodule "catkin_ws/src/ur_robot"]
+    path = "catkin_ws/src/ur_robot"
+    url = https://github.com/fmauch/universal_robot.git
+    branch = calibration_devel

@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  ros-master:
+    image: docker.io/bsbretly/remy-robotics-test:latest
+    command: stdbuf -o L roscore
+    network_mode: host
+    
+  gazebo:
+    image: docker.io/bsbretly/remy-robotics-test:latest
+    depends_on:
+      - ros-master
+    network_mode: host
+    environment:
+      - "XAUTHORITYS"
+      - "DISPLAY"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    devices:
+    - "/dev/dri/"
+    command: bash -c "cd /home/catkin_ws && source devel/setup.bash && roslaunch --wait simple_scene gazebo.launch"
+
+  pick_and_place:
+    image: docker.io/bsbretly/remy-robotics-test:latest
+    depends_on:
+      - gazebo
+    network_mode: host
+    command: bash -c "sleep 5 && cd /home/catkin_ws && source devel/setup.bash && roslaunch pick_and_place pick_and_place.launch"

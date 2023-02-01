@@ -1,0 +1,31 @@
+<launch>
+    
+  <?ignore
+      =========================================================
+                          joint_state_publisher
+      =========================================================
+  ?> 
+  <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" >
+    <param name="\use_gui" value="false"/>
+  </node>
+
+  <?ignore
+      =========================================================
+           move_group node from auto-generated packages
+      =========================================================
+  ?> 
+  <include file="$(find robot_moveit_config)/launch/move_group.launch">
+      <arg name ="publish_monitored_planning_scene" value="true" />
+  </include>
+
+  <?ignore
+      =========================================================
+                          pick_and_place
+      =========================================================
+  ?>
+    <node name="pick_and_place" pkg="pick_and_place" type="pick_and_place" output="screen">
+      <rosparam command="load" file="$(find pick_and_place)/cfg/pick_and_place_params.yaml" />
+    </node>
+  
+
+</launch>
