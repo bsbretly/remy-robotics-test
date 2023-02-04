@@ -23,7 +23,7 @@ A video of my pick and place pipeline can be found [here](https://youtu.be/dgJlA
 ### Using docker image
 
 ```bash
-$ docker pull ghcr.io/bsbretly/remy-robotics-test:latest
+$ docker pull docker.io/bsbretly/remy-robotics-test:latest
 $ xhost local:root
 $ docker-compose up
 ```
