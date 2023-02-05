@@ -16,7 +16,7 @@ The gripper can be controlled through a topic:
 
 ## Solution
 
-A video of my pick and place pipeline can be found [here](https://youtu.be/dgJlA0qIIqM). I used the [MoveIt!](https://moveit.ros.org/) framework to implement the control and motion planning of the UR5E arm. The framework allows for the modular use of a variety of controllers, planners and sensing plugins to suite the needs of a given robot application. For the pick and place application highlighted here, I used the joint trajectory controller plugin to control the arm in joint space to a trajectory derived via [OMPL](https://ompl.kavrakilab.org/). Kinematic solvers are implemented with the KDL plugin.
+A video of my pick and place pipeline can be found [here](https://youtu.be/dgJlA0qIIqM), developed in Ubuntu 20.04 with ROS1 Noetic. I used the [MoveIt!](https://moveit.ros.org/) framework to implement the control and motion planning of the UR5E arm. The framework allows for the modular use of a variety of controllers, planners and sensing plugins to suite the needs of a given robot application. For the pick and place application highlighted here, I used the joint trajectory controller plugin to control the arm in joint space to a trajectory derived via [OMPL](https://ompl.kavrakilab.org/). Kinematic solvers are implemented with the KDL plugin.
 
 ## Build && Run
 
@@ -43,6 +43,8 @@ $ roslaunch simple_scene gazebo.launch
 
 Next, open another terminal and from the root of this directory run:
 ```bash
+$ cd catkin_ws
+$ source devel/setup.bash
 $ roslaunch pick_and_place pick_and_place.launch
 ```
 
